@@ -90,9 +90,6 @@ namespace TlsConnectStressTest
 
                             stream.AuthenticateAsClient("127.0.0.1");
 
-                            // We are connected, so we want to drop our payload and get out ASAP.
-                            stream.ReadTimeout = 500;
-
                             stream.Write(payload);
                             stream.Flush();
                             stream.ReadByte();
